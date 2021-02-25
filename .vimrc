@@ -1,3 +1,9 @@
+" Set background
+set background=dark
+
+" Make Vim more useful
+set nocompatible
+
 "Remap arrow keys to nothing, because using arrow keys is unnesesary.
 noremap <Up> <NOP>
 noremap <Down> <NOP>
