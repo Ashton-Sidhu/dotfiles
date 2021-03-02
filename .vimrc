@@ -22,6 +22,7 @@ noremap <Right> <NOP>
 
 " Make tabs 4 spaces
 :set tabstop=4 shiftwidth=4 expandtab
+:set foldmethod=indent
 
 " Highlight searches
 :set hlsearch
@@ -42,6 +43,6 @@ noremap <Right> <NOP>
 
 " Use relative line numbers
 if exists("&relativenumber")
-    set relativenumber
+    set relativenumber number
     au BufReadPost * set relativenumber
 endif
