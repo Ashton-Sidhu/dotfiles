@@ -1,5 +1,5 @@
 # Easier navigation
-alias --="cd ~"
+alias h="cd ~"
 
 # Get week number
 alias week='date +%V'
@@ -17,3 +17,6 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Open up notion pages
+alias links="xdg-open notion://https://www.notion.so/b743635772c74c26b2a4869b2f823db5?v=e5de48ad4730435f9e2bc7298e12f3a2"
