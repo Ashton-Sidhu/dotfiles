@@ -5,7 +5,7 @@ alias h="cd ~"
 alias week='date +%V'
 
 # Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -20,3 +20,6 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 
 # Open up notion pages
 alias links="xdg-open notion://https://www.notion.so/b743635772c74c26b2a4869b2f823db5?v=e5de48ad4730435f9e2bc7298e12f3a2"
+
+# Clean Docker Env
+alias dclean="docker system prune -a"
