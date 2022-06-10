@@ -10,6 +10,11 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+inoremap jk <Esc>
+
+:set laststatus=2
+:set statusline+=%F
+
 " Caseless.
 :set ignorecase
 :set smartcase
@@ -19,10 +24,12 @@ noremap <Right> <NOP>
 
 " Enable syntax highlight
 :syntax on
+:syntax enable
 
 " Make tabs 4 spaces
 :set tabstop=4 shiftwidth=4 expandtab
-:set foldmethod=indent
+:set smarttab
+:set showtabline=2
 
 " Highlight searches
 :set hlsearch
@@ -41,8 +48,24 @@ noremap <Right> <NOP>
 :set hls "highlight all search patterns
 :set incsearch "inc search means to show results of search as you type
 
+:set magic "for regex magic is on
+:set nobackup
+:set nowb
+:set noswapfile
+
+:set ai "Auto indent
+:set si "Smart indent
+:set wrap "Wrap lines
+
 " Use relative line numbers
 if exists("&relativenumber")
     set relativenumber number
     au BufReadPost * set relativenumber
 endif
+
+" Fuzzy Finder
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+nmap <C-P> :FZF<CR>
+
+nnoremap t gt
+nnoremap T gT
