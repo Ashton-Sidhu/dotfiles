@@ -8,18 +8,23 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "lunarvim"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
+lvim.leader                    = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<C-n>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<C-o>"] = "$a,<ESC>o"
+lvim.keys.insert_mode["jk"]    = "<ESC>"
+lvim.keys.normal_mode["<C-o>"] = "<ESC>$a,<ESC>o"
+
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
@@ -28,21 +33,21 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+    -- for input mode
+    i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+    },
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -60,7 +65,6 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -69,8 +73,12 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ensure_installed = {
     "bash",
     "json",
+    "lua",
     "python",
     "yaml",
+    "hcl",
+    "dockerfile",
+    "sql"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -120,7 +128,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    --   { command = "black", filetypes = { "python" } },
+    { command = "black", filetypes = { "python" } },
     { command = "isort", filetypes = { "python" } },
     --   {
     --     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
@@ -152,10 +160,10 @@ formatters.setup {
 -- }
 
 -- Additional Plugins
---     {"folke/tokyonight.nvim"},
 lvim.plugins = {
-    { "petobens/poet-v" },
-    { "tpope/vim-surround" }
+    "petobens/poet-v",
+    "tpope/vim-surround",
+    "github/copilot.vim"
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -164,14 +172,22 @@ lvim.plugins = {
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "zsh",
+    callback = function()
+        -- let treesitter use bash highlight for zsh files as well
+        require("nvim-treesitter.highlight").attach(0, "bash")
+    end,
+})
 
-vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.g.poetv_auto_activate = 1
+vim.b.copilot_enabled = true
+
+vim.g.pyindent_open_paren = 'shiftwidth()'
+vim.cmd("let g:python_indent = {}")
+vim.cmd("let g:python_indent.closed_paren_align_last_line = v:false")
+
+vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+vim.opt.relativenumber = true -- set relative numbered lines
+vim.opt.autoindent = true
+vim.opt.autoindent = true
