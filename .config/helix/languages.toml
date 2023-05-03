@@ -2,5 +2,15 @@
 name = "python"
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
+roots = ["pyproject.toml", "Poetry.lock"]
 language-server = {command = "pylsp"}
 config = {}
+
+[[language]]
+name = "terraform"
+language-server = {command = "terraform-ls serve"}
+auto-format = true
+scope = "source.tf"
+formatter = { command = "terraform", arg = ["fmt", "-"]}
+file-types = ["tf", "tfvars"]
+roots = [".terraform.lock.hcl", "main.tf"]

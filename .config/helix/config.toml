@@ -13,8 +13,11 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+
 [editor.statusline]
-left        = ["mode", "spinner"]
+left        = ["mode", "spinner", "version-control"]
 center      = ["file-name"]
 right       = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator   = "│"
@@ -25,6 +28,8 @@ mode.select = "SELECT"
 [keys.normal]
 C-s     = ":w"
 "space" = { c = ":buffer-close" }
+y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_before"
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
