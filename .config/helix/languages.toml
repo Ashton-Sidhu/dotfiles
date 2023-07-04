@@ -1,9 +1,9 @@
 [[language]]
 name = "python"
-formatter = { command = "black", args = ["--quiet", "-"] }
+formatter = { command = "black", args = ["--quiet", "-", "-l", "120"] }
 auto-format = true
 roots = ["pyproject.toml", "Poetry.lock"]
-language-server = {command = "pylsp"}
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
 config = {}
 
 [[language]]
