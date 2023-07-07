@@ -33,4 +33,5 @@ p = "paste_clipboard_before"
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+C-r = "paste_clipboard_before"
 
