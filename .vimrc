@@ -10,6 +10,15 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+nnoremap gl $
+nnoremap gh ^
+
+nnoremap m ]m
+nnoremap M [m
+
+nnoremap ] gt
+nnoremap [ gT
+
 inoremap jk <Esc>
 
 :set laststatus=2
@@ -66,6 +75,3 @@ endif
 " Fuzzy Finder
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 nmap <C-P> :FZF<CR>
-
-nnoremap t gt
-nnoremap T gT
