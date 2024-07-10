@@ -22,33 +22,6 @@ command = "ruff-lsp"
 command = "black"
 args = ["--line-length", "120", "--quiet", "-"]
 
-# [language.formatter]
-# command = "bash"
-# args = [
-#     "-c",
-#     """
-#     set -eou pipefail
-
-#     COMMAND="cat"
-
-#     if command -v black &> /dev/null; then
-#         COMMAND+=" | black -l 120 --quiet -"
-#     fi
-
-#     if command -v isort &> /dev/null; then
-#         COMMAND+=" | isort -"
-#     fi
-
-#     if command -v ruff &> /dev/null; then
-#         COMMAND+=" | ruff check --select I --fix -"
-#     fi
-
-#     echo "$COMMAND" >&2
-
-#     eval "$COMMAND"
-#     """,
-# ]
-
 [[language]]
 name = "tfvars"
 auto-format = true
