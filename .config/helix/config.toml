@@ -1,12 +1,14 @@
 theme       = "base16_transparent"
 
 [editor]
-auto-save   = true
-line-number = "relative"
-true-color  = true
-cursorline  = true
-bufferline  = "multiple"
-gutters     = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+auto-save           = true
+auto-completion     = true
+line-number         = "relative"
+true-color          = true
+cursorline          = true
+bufferline          = "multiple"
+gutters             = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+popup-border        = "all"
 
 [editor.cursor-shape]
 insert      = "bar"
@@ -19,11 +21,14 @@ hidden      = false
 [editor.statusline]
 left        = ["mode", "spinner", "version-control"]
 center      = ["file-name"]
-right       = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right       = ["diagnostics", "selections", "position", "file-type"]
 separator   = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
 
 [keys.normal]
 "space"     = { c = ":buffer-close" }

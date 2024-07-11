@@ -5,7 +5,7 @@ install-brew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 install-pkgs:
-	brew install stow fzf dev-utils jq zellij ripgrep zoxide jandedobbeleer/oh-my-posh/oh-my-posh node 
+	brew install stow fzf jq zellij ripgrep zoxide jandedobbeleer/oh-my-posh/oh-my-posh node 
 
 init-stow:
 	stow .
