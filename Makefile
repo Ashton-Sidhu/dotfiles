@@ -5,9 +5,14 @@ install-brew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 install-pkgs:
-	brew install stow fzf dev-utils jq zellij ripgrep zoxide jandedobbeleer/oh-my-posh/oh-my-posh 
+	brew install stow fzf dev-utils jq zellij ripgrep zoxide jandedobbeleer/oh-my-posh/oh-my-posh node 
 
 init-stow:
 	stow .
 
+install-lsps: install-front-end-lsps
 
+install-front-end-lsps:
+	npm install -g typescript typescript-language-server
+	npm i -g svelte-language-server
+	npm i -g typescript-svelte-plugin
