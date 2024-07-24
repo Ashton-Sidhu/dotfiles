@@ -73,7 +73,7 @@ plugins=(git)
 # source $ZSH/oh-my-zsh.sh
 
 
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH:/usr/local/bin"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
