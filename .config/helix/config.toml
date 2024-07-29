@@ -1,4 +1,4 @@
-theme       = "base16_transparent"
+theme               = "base16_transparent"
 
 [editor]
 auto-save           = true
@@ -11,31 +11,31 @@ gutters             = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"
 popup-border        = "all"
 
 [editor.cursor-shape]
-insert      = "bar"
-normal      = "block"
-select      = "underline"
+insert              = "bar"
+normal              = "block"
+select              = "underline"
 
 [editor.file-picker]
-hidden      = false
+hidden              = false
 
 [editor.statusline]
-left        = ["mode", "spinner", "version-control"]
-center      = ["file-name"]
-right       = ["diagnostics", "selections", "position", "file-type"]
-separator   = "│"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+left                = ["mode", "spinner", "version-control"]
+center              = ["file-name"]
+right               = ["diagnostics", "selections", "position", "file-type"]
+separator           = "│"
+mode.normal         = "NORMAL"
+mode.insert         = "INSERT"
+mode.select         = "SELECT"
 
 [editor.lsp]
 display-inlay-hints = true
 
 [keys.normal]
-"space"     = { c = ":buffer-close" }
-y           = "yank_main_selection_to_clipboard"
-p           = "paste_clipboard_before"
+"space"             = { c     = ":buffer-close" }
+y                   = "yank_main_selection_to_clipboard"
+p                   = "paste_clipboard_before"
+C-g                 = ":toggle-option lsp.display-inlay-hints"
 
 [keys.insert]
-j           = { k             = "normal_mode" } # Maps `jk` to exit insert mode
-C-r         = "paste_clipboard_before"
-
+j                   = { k             = "normal_mode" } # Maps `jk` to exit insert mode
+C-r                 = "paste_clipboard_before"
