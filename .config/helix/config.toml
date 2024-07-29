@@ -34,7 +34,7 @@ display-inlay-hints = true
 "space"             = { c     = ":buffer-close" }
 y                   = "yank_main_selection_to_clipboard"
 p                   = "paste_clipboard_before"
-C-g                 = ":toggle-option lsp.display-inlay-hints"
+C-l                 = ":toggle-option lsp.display-inlay-hints"
 
 [keys.insert]
 j                   = { k             = "normal_mode" } # Maps `jk` to exit insert mode
