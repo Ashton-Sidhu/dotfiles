@@ -31,6 +31,18 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       commit_icon = '@'
       fetch_status = true
 
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = 'p:grey'
+    background = 'transparent'
+    template = '{{ if .Venv }}  ({{ .Venv }}) {{ end }}'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
