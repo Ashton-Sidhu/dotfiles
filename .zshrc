@@ -22,10 +22,10 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in zsh plugins
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -34,7 +34,7 @@ zinit cdreplay -q
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
-# Keybindings
+# # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -60,38 +60,38 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Shell integrations
-eval "$(fzf --zsh)"
+# # Shell integrations
+source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
 # # Path to your oh-my-zsh installation.
 
 # export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(git)
+# plugins=(git)
 
 # source $ZSH/oh-my-zsh.sh
 
 
-export PATH="/usr/local/bin:$HOME/.poetry/bin:$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="$PATH:$HOME/.cargo/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/sidhu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/sidhu/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/sidhu/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/sidhu/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/sidhu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/sidhu/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/sidhu/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/sidhu/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/sidhu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sidhu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/sidhu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sidhu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
