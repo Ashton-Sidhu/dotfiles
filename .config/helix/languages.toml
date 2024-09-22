@@ -55,23 +55,23 @@ biome = { command = "bun", args = ["run", "biome", "lsp-proxy"] }
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls" ]
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls" ]
 auto-format = true
 
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls" ]
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls" ]
 
 [[language]]
 name = "json"
@@ -82,3 +82,7 @@ name = "svelte"
 auto-format = true
 block-comment-tokens = {start = "<!--", end = "-->"}
 
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }

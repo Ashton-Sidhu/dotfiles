@@ -73,7 +73,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # source $ZSH/oh-my-zsh.sh
 
 
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin"
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
