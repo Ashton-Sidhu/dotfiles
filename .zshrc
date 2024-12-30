@@ -73,7 +73,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # source $ZSH/oh-my-zsh.sh
 
 
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/go/bin"
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
@@ -95,3 +95,10 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin"
 
 # # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sidhu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/sidhu/.bun/_bun" ] && source "/Users/sidhu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
