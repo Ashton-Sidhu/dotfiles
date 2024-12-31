@@ -4,3 +4,4 @@ cursor-style = block
 shell-integration-features = no-cursor
 theme = /Users/sidhu/.config/ghostty/theme
 font-thicken = true
+macos-option-as-alt = true
