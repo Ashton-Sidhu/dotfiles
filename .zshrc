@@ -32,7 +32,7 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
 # # Keybindings
 bindkey -e
@@ -102,3 +102,10 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/go/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export RPROMPT="%*"
+precmd() { 
+  precmd() {
+    echo
+  }
+}
+export PROMPT="%~ > "
