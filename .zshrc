@@ -103,9 +103,9 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/go/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export RPROMPT="%*"
-precmd() { 
-  precmd() {
-    echo
-  }
-}
-export PROMPT="%~ > "
+# precmd() { 
+#   precmd() {
+#     echo
+#   }
+# }
+export PROMPT="%F{blue}%~%f > "
