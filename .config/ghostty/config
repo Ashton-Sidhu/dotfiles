@@ -1,5 +1,5 @@
 term = xterm-256color
-font-size = 17
+font-size = 18
 cursor-style = block
 shell-integration-features = no-cursor
 theme = /Users/sidhu/.config/ghostty/theme
@@ -8,3 +8,4 @@ macos-option-as-alt = true
 link-url = true
 window-height = 74
 window-width = 292
+font-feature = -liga
