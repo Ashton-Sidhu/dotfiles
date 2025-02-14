@@ -53,6 +53,10 @@ runInTerminal = true
 [language-server]
 biome = { command = "bun", args = ["run", "biome", "lsp-proxy"] }
 
+[language-server.tailwindcss-ls]
+command = "bun"
+args = ["--stdio", "tailwindcss-language-server"]
+
 [[language]]
 name = "javascript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls" ]
