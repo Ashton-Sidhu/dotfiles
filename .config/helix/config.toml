@@ -1,15 +1,23 @@
 theme               = "base16_transparent"
 
 [editor]
-auto-save           = true
-auto-completion     = true
-line-number         = "relative"
-true-color          = true
-cursorline          = false
-bufferline          = "multiple"
-gutters             = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
-popup-border        = "all"
+auto-save               = true
+auto-completion         = true
+line-number             = "relative"
+true-color              = true
+cursorline              = false
+bufferline              = "multiple"
+gutters                 = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+popup-border            = "all"
+end-of-line-diagnostics = "hint"
 
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
+ 
 [editor.cursor-shape]
 insert              = "bar"
 normal              = "block"
@@ -31,10 +39,20 @@ mode.select         = "SELECT"
 display-inlay-hints = true
 
 [keys.normal]
-"space"             = { c     = ":buffer-close" }
 y                   = "yank_main_selection_to_clipboard"
 p                   = "paste_clipboard_before"
 C-l                 = ":toggle-option lsp.display-inlay-hints"
+space.i             = "@|sc -e -r "
+"ret"               = "goto_word"
+
+_                   = "@ File Management\n"
+t                   = "@:sh touch <C-r>%"
+r                   = "@:sh rm <C-r>%"
+e                   = "@:sh mkdir <C-r>%"
+w                   = "@:sh mv <C-r>% <C-r>%"
+c                   = "@:sh cp <C-r>% <C-r>%"
+
+0                   = ":x"
 
 [keys.insert]
 j                   = { k             = "normal_mode" } # Maps `jk` to exit insert mode
