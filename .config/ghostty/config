@@ -8,4 +8,4 @@ macos-option-as-alt = true
 link-url = true
 window-height = 74
 window-width = 292
-font-feature = -liga
+font-feature = -calt, -liga, -dlig

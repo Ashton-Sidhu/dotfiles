@@ -27,6 +27,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
+fpath=(/Users/sidhu/.docker/completions $fpath)
 # Load completions
 autoload -Uz compinit && compinit
 

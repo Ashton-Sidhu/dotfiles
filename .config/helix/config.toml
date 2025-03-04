@@ -1,4 +1,4 @@
-theme               = "base16_transparent"
+theme               = "baseterm"
 
 [editor]
 auto-save               = true
@@ -43,8 +43,10 @@ y                   = "yank_main_selection_to_clipboard"
 p                   = "paste_clipboard_before"
 C-l                 = ":toggle-option lsp.display-inlay-hints"
 space.i             = "@|sc -e -r "
+space.c             = ":buffer-close"
 "ret"               = "goto_word"
 
+[keys.normal."'"]
 _                   = "@ File Management\n"
 t                   = "@:sh touch <C-r>%"
 r                   = "@:sh rm <C-r>%"
