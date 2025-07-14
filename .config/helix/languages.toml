@@ -4,16 +4,19 @@ auto-format = true
 roots = ["pyproject.toml", "pyrightconfig.json", "Poetry.lock"]
 language-servers = [  "ruff", "basedpyright"]
 
-[language-server.basedpyright.config]
-basedpyright.analysis.diagnosticMode = "openFilesOnly"
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+except-features = ["format", "code-action"]
+
+[language-server.basedpyright.config.basedpyright.analysis]
+autoSearchPaths = true
+typeCheckingMode = "basic"
+diagnosticMode = "openFilesOnly"
 
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
-
-[language-server.pylyzer]
-command = "pylyzer"
-args = ["--server"]
 
 [language.formatter]
 command = "ruff"
@@ -52,7 +55,7 @@ biome = { command = "bun", args = ["run", "biome", "lsp-proxy"] }
 
 [language-server.tailwindcss-ls]
 command = "bun"
-args = ["--stdio", "tailwindcss-language-server"]
+args = ["run", "tailwindcss-language-server", "--stdio"]
 
 [[language]]
 name = "javascript"
@@ -82,6 +85,7 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 name = "svelte"
 auto-format = true
 block-comment-tokens = {start = "<!--", end = "-->"}
+language-servers = ["svelteserver", "tailwindcss-ls"]
 
 [[language]]
 name = "go"

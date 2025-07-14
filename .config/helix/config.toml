@@ -1,4 +1,4 @@
-theme               = "baseterm"
+theme               = "ayu_mirage"
 
 [editor]
 auto-save               = true
@@ -42,7 +42,6 @@ display-inlay-hints = true
 y                   = "yank_main_selection_to_clipboard"
 p                   = "paste_clipboard_before"
 C-l                 = ":toggle-option lsp.display-inlay-hints"
-space.i             = "@|sc -e -r "
 space.c             = ":buffer-close"
 "ret"               = "goto_word"
 
