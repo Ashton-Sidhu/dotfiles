@@ -1,13 +1,10 @@
 layout {
-	pane size=1 borderless=true {
-		plugin location="zellij:compact-bar"
-	}
-	pane split_direction="vertical" {
-		pane size="60%"
+	pane {
+		pane size="70%"
 
-		pane split_direction="horizontal" {
+		pane stacked=true {
+			pane expanded=true
 			pane
-			// pane
 		}
 	}
 	pane size=1 borderless=true {

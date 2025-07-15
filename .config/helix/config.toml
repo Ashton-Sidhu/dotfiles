@@ -1,4 +1,4 @@
-theme               = "ayu_mirage"
+theme               = "ayumirage_custom"
 
 [editor]
 auto-save               = true
