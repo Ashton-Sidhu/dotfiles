@@ -2,7 +2,7 @@
 name = "python"
 auto-format = true
 roots = ["pyproject.toml", "pyrightconfig.json", "Poetry.lock"]
-language-servers = [  "ruff", "basedpyright"]
+language-servers = [  "ruff", "pyright"]
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
