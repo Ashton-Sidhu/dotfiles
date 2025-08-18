@@ -2,7 +2,7 @@
 name = "python"
 auto-format = true
 roots = ["pyproject.toml", "pyrightconfig.json", "Poetry.lock"]
-language-servers = [  "ruff", "pyright"]
+language-servers = [  "ruff", "basedpyright"]
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
@@ -84,7 +84,7 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 [[language]]
 name = "svelte"
 auto-format = true
-block-comment-tokens = {start = "<!--", end = "-->"}
+block-comment-tokens = [{start = "<!--", end = "-->"}]
 language-servers = ["svelteserver", "tailwindcss-ls"]
 
 [[language]]

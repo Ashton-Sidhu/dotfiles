@@ -14,9 +14,9 @@ end-of-line-diagnostics = "hint"
 [editor.inline-diagnostics]
 # Minimum severity to show a diagnostic on the primary cursor's line.
 # Note that `cursor-line` diagnostics are hidden in insert mode.
-cursor-line = "error"
+cursor-line = "warning"
 # Minimum severity to show a diagnostic on other lines:
-# other-lines = "error"
+other-lines = "info"
  
 [editor.cursor-shape]
 insert              = "bar"
@@ -36,12 +36,9 @@ mode.insert         = "INSERT"
 mode.select         = "SELECT"
 
 [editor.lsp]
-display-inlay-hints = true
+display-inlay-hints = false
 
 [keys.normal]
-y                   = "yank_main_selection_to_clipboard"
-p                   = "paste_clipboard_before"
-C-l                 = ":toggle-option lsp.display-inlay-hints"
 space.c             = ":buffer-close"
 "ret"               = "goto_word"
 

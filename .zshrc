@@ -39,6 +39,7 @@ zinit cdreplay -q
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^[w' kill-region
 
 # History
@@ -74,7 +75,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # source $ZSH/oh-my-zsh.sh
 
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/go/bin"
+export PATH="$PATH:$HOME/bin/.local/scripts:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/go/bin"
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
