@@ -1,5 +1,5 @@
 term = xterm-256color
-font-size = 16
+font-size = 14
 cursor-style = block
 shell-integration-features = no-cursor
 theme = /Users/sidhu/.config/ghostty/theme
