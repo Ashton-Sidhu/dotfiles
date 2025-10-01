@@ -110,4 +110,16 @@ export RPROMPT="%*"
 #     echo
 #   }
 # }
-export PROMPT="%F{blue}%~%f > "
+autoload -Uz add-zsh-hook vcs_info
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '%F{green}(%b)%f'
+zstyle ':vcs_info:git:*' actionformats '%F{green}(%b|%a)%f'
+
+prompt_vcs_info() {
+  vcs_info
+}
+add-zsh-hook precmd prompt_vcs_info
+
+setopt prompt_subst
+export PROMPT='%F{blue}%~%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} > '
