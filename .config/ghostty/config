@@ -9,3 +9,4 @@ link-url = true
 window-height = 74
 window-width = 292
 font-feature = -calt, -liga, -dlig
+bell-features = audio

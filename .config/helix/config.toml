@@ -16,7 +16,7 @@ end-of-line-diagnostics = "hint"
 # Note that `cursor-line` diagnostics are hidden in insert mode.
 cursor-line = "hint"
 # Minimum severity to show a diagnostic on other lines:
-other-lines = "info"
+# other-lines = "info"
  
 [editor.cursor-shape]
 insert              = "bar"
