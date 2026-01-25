@@ -9,14 +9,14 @@ cursorline              = false
 bufferline              = "multiple"
 gutters                 = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 popup-border            = "all"
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
 # Minimum severity to show a diagnostic on the primary cursor's line.
 # Note that `cursor-line` diagnostics are hidden in insert mode.
 cursor-line = "hint"
 # Minimum severity to show a diagnostic on other lines:
-other-lines = "info"
+# other-lines = "disable"
  
 [editor.cursor-shape]
 insert              = "bar"
@@ -41,6 +41,7 @@ display-inlay-hints = false
 [keys.normal]
 space.c             = ":buffer-close"
 "ret"               = "goto_word"
+A-s = ":write"
 
 [keys.normal."'"]
 _                   = "@ File Management\n"
@@ -49,7 +50,6 @@ r                   = "@:sh rm <C-r>%"
 e                   = "@:sh mkdir <C-r>%"
 w                   = "@:sh mv <C-r>% <C-r>%"
 c                   = "@:sh cp <C-r>% <C-r>%"
-
 0                   = ":x"
 
 [keys.insert]

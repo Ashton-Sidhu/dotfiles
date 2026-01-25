@@ -2,17 +2,11 @@
 name = "python"
 auto-format = true
 roots = ["pyproject.toml", "pyrightconfig.json", "Poetry.lock"]
-language-servers = [  "ruff", "basedpyright"]
+language-servers = [  "ruff", "ty" ]
 
-[language-server.basedpyright]
-command = "basedpyright-langserver"
-args = ["--stdio"]
-except-features = ["format", "code-action"]
-
-[language-server.basedpyright.config.basedpyright.analysis]
-autoSearchPaths = true
-typeCheckingMode = "basic"
-diagnosticMode = "openFilesOnly"
+[language-server.ty]
+command = "ty"
+args = ["server"]
 
 [language-server.ruff]
 command = "ruff"
