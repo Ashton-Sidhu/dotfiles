@@ -16,7 +16,7 @@ popup-border            = "all"
 # Note that `cursor-line` diagnostics are hidden in insert mode.
 cursor-line = "hint"
 # Minimum severity to show a diagnostic on other lines:
-# other-lines = "disable"
+# other-lines = "info"
  
 [editor.cursor-shape]
 insert              = "bar"
@@ -42,6 +42,7 @@ display-inlay-hints = false
 space.c             = ":buffer-close"
 "ret"               = "goto_word"
 A-s = ":write"
+A-q = ":q"
 
 [keys.normal."'"]
 _                   = "@ File Management\n"

@@ -5,7 +5,7 @@ install-brew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 install-pkgs:
-	brew install stow fzf jq tmux ripgrep zoxide node zsh helix ghostty
+	brew install stow fzf jq tmux ripgrep zoxide node zsh helix uv ruff
 
 init-stow:
 	stow .
