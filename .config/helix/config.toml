@@ -40,9 +40,9 @@ display-inlay-hints = false
 
 [keys.normal]
 space.c             = ":buffer-close"
-"ret"               = "goto_word"
 A-s = ":write"
 A-q = ":q"
+A-r = ":rla"
 
 [keys.normal."'"]
 _                   = "@ File Management\n"
@@ -56,3 +56,9 @@ c                   = "@:sh cp <C-r>% <C-r>%"
 [keys.insert]
 j                   = { k             = "normal_mode" } # Maps `jk` to exit insert mode
 C-r                 = "paste_clipboard_before"
+
+[keys.normal.ret]
+"ret"               = "goto_word"
+s = ":write"
+q = ":q"
+r = ":rla"

@@ -11,10 +11,10 @@ init-stow:
 	stow .
 
 install-svelte-dev:
-	npm i -g typescript typescript-language-server 
-	npm i -g svelte-language-server
-	npm i -g typescript-svelte-plugin
-	npm i -g @tailwindcss/language-server
+	bun i -g typescript typescript-language-server 
+	bun i -g svelte-language-server
+	bun i -g typescript-svelte-plugin
+	bun i -g @tailwindcss/language-server
 
 install-go-dev:
 	go install golang.org/x/tools/gopls@latest                         
